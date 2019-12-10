@@ -7,6 +7,7 @@ import ua.procamp.exception.EmptyStackException;
 
 import static org.hamcrest.CoreMatchers.is;
 //import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
 @RunWith(JUnit4.class)
@@ -16,6 +17,7 @@ public class StackTest {
 	@Test
 	public void testPushElementOntoEmptyStack() {
 		intStack.push(234);
+        assertNull(intStack.pop());
 	}
 
 	@Test(expected = EmptyStackException.class)
