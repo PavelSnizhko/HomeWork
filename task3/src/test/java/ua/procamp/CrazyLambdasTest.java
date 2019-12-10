@@ -11,7 +11,7 @@ import java.util.function.*;
 
 
 
-import static org.awaitility.Awaitility.*;
+
 
 
 
@@ -156,8 +156,8 @@ public class CrazyLambdasTest {
 
         Queue<Integer> concurrentLinkedQueue = new ConcurrentLinkedQueue<>();
         newThreadRunnableConsumer.accept(() -> concurrentLinkedQueue.add(50));
-
-        await().atMost(2, Duration.SECONDS).until(didTheThing());
+        Thread.sleep(500);
+//        await().atMost(2, Duration.SECONDS).until(didTheThing());
         // don't do that in real code
 
         assertEquals(1, concurrentLinkedQueue.size());
